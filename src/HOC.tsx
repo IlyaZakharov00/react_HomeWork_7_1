@@ -13,7 +13,6 @@ export function withChangeDate(Component:React.FC<TPropsVideoList>){
         let diffMinutes = moment().diff(moment(dataFromVideo), 'minutes')
         let diffHours = moment().diff(moment(dataFromVideo), 'hours')
         let diffDays = moment().diff(moment(dataFromVideo), 'days')
-        let newDate;
         
         if(diffDays >= 1){
           let daysAgo;
@@ -22,13 +21,10 @@ export function withChangeDate(Component:React.FC<TPropsVideoList>){
           } else if(diffDays === (2 || 3 || 4)){
             daysAgo = "дня"
           } else daysAgo = 'дней'
-          newDate = `${diffDays} ${daysAgo} назад`
           video.date = `${diffDays} ${daysAgo} назад`
           } else if(diffHours >= 1){
-          newDate = '5 часов назад'
           video.date = '5 часов назад'
         } else if(diffMinutes < 60){
-          newDate = '12 минут назад'
           video.date = '12 минут назад'
         }
     }
