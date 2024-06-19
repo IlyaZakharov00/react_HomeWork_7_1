@@ -1,9 +1,10 @@
 import moment from "moment";
 import { VideoList } from "./App"
+import {TPropsVideoList } from "./App";
 
-export function withChangeDate(Component:any){
+export function withChangeDate(Component:React.FC<TPropsVideoList>){
 
-  return function (props:any){
+  return function (props:TPropsVideoList){
     const { list } = props;
 
     for(const video of list){
@@ -30,8 +31,6 @@ export function withChangeDate(Component:any){
           newDate = '12 минут назад'
           video.date = '12 минут назад'
         }
-
-        console.log(newDate)
     }
     return <Component {...props} /> 
   } 

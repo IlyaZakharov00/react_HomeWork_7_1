@@ -2,16 +2,16 @@ import {useState} from 'react';
 import './App.css'
 import { DateTimePretty } from './HOC';
 
-type TPropsVideo = {
+export type TPropsVideo = {
   url: string;
   date: string;
 }
 
-type TPropsDateTime = {
+export type TPropsDateTime = {
   date: string
 }
 
-type TPropsVideoList = {
+export type TPropsVideoList = {
   list: TPropsVideo[]
 }
 
